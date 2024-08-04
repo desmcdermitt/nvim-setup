@@ -11,8 +11,7 @@ return {
     vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
     vim.keymap.set(
       "n",
-      "<leader>fg",
-      "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+      "<leader>fg", builtin.live_grep,
       { desc = "Live Grep" }
     )
     vim.keymap.set(
