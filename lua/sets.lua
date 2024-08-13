@@ -27,3 +27,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "100"
 vim.opt.smartindent = false
+
+vim.opt.guicursor = "n-v-i-c:block-Cursor"
+vim.opt.mouse = ""
