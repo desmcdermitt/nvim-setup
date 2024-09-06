@@ -5,6 +5,7 @@ return {
     "ThePrimeagen/harpoon",
     "nvim-lua/plenary.nvim",
     "joshmedeski/telescope-smart-goto.nvim",
+    "nvim-telescope/telescope-live-grep-args.nvim",
   },
   config = function()
     local builtin = require("telescope.builtin")
@@ -82,8 +83,8 @@ return {
             ["<CR>"] = select_one_or_multi,
             ["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,
             ["<C-S-d>"] = actions.delete_buffer,
-				    ["<C-s>"] = actions.cycle_previewers_next,
-				    ["<C-a>"] = actions.cycle_previewers_prev,
+            ["<C-s>"] = actions.cycle_previewers_next,
+            ["<C-a>"] = actions.cycle_previewers_prev,
           },
         },
       },
@@ -94,7 +95,7 @@ return {
         },
       },
     })
-
+    require("telescope").load_extension("live_grep_args")
     require("telescope").load_extension("noice")
   end,
 }
