@@ -6,7 +6,7 @@ return {
         require('nordic').colorscheme({
             -- Underline style used for spelling
             -- Options: 'none', 'underline', 'undercurl'
-            underline_option = 'none',
+            underline_option = 'undercurl',
 
             -- Italics for certain keywords such as constructors, functions,
             -- labels and namespaces

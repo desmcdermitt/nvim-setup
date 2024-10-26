@@ -93,6 +93,9 @@ return {
           -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
           find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
         },
+        colorscheme = {
+            enable_preview = true
+        },
       },
     })
     require("telescope").load_extension("live_grep_args")

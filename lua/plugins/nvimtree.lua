@@ -10,15 +10,6 @@ return {
             },
             view = {
                 width = 25,
-                relativenumber = false,
-                number = false,
-                adaptive_size = true,
-            },
-            renderer = {
-                group_empty = true,
-            },
-            filters = {
-                dotfiles = true,
             },
         })
     end
