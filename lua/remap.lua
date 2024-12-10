@@ -21,5 +21,3 @@ vim.keymap.set("n", "<C-w>", ":q<cr>")
 
 vim.keymap.set("n", "<C-b>", "ibreakpoint()<escape>")
 vim.keymap.set("i", "<C-b>", "breakpoint()")
-
-vim.keymap.set("i", "<ENTER>", "<ESC>:lua vim.lsp.buf.format()<CR>a<ENTER>")
