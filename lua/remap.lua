@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>bd", ":bdelete!<cr>" )
 
 vim.keymap.set("n", "<C-\\>", ":vsplit<cr>")
 vim.keymap.set("n", "<C-s>", ":w<cr>")
-vim.keymap.set("i", "<C-s>", "<ESC>:lua vim.lsp.buf.format()<CR>:w<CR>l")
+vim.keymap.set("i", "<C-s>", "<ESC><CMD>w<CR>")
 vim.keymap.set("n", "<C-w>", ":q<cr>")
 
 vim.keymap.set("n", "<C-b>", "ibreakpoint()<escape>")

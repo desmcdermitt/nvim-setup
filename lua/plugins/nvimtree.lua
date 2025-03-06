@@ -8,9 +8,7 @@ return {
             sort = {
                 sorter = "case_sensitive",
             },
-            view = {
-                width = 25,
-            },
+            view = { adaptive_size = true },
         })
         vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
     end
