@@ -6,6 +6,7 @@ return {
     "nvim-lua/plenary.nvim",
     "joshmedeski/telescope-smart-goto.nvim",
     "nvim-telescope/telescope-live-grep-args.nvim",
+    'andrew-george/telescope-themes'
   },
   config = function()
     local builtin = require("telescope.builtin")
@@ -42,6 +43,8 @@ return {
 
     local telescope = require("telescope")
     local telescopeConfig = require("telescope.config")
+    telescope.load_extension('themes')
+    local builtin_schemes = require("telescope._extensions.themes").builtin_schemes
 
     -- Clone the default Telescope configuration
     local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
@@ -93,13 +96,30 @@ return {
         find_files = {
           -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
           find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
-        },
-        colorscheme = {
-            enable_preview = true
-        },
+        }
       },
+      extensions = {
+        themes = {
+          enable_previewer = true,
+          enable_live_preview = true,
+          ignore = {},
+          persist = {
+            enabled = true,
+            path = vim.fn.stdpath("config") .. "/lua/colorscheme.lua"
+          }
+        }
+      }
     })
+    telescope.load_extension("themes")
     require("telescope").load_extension("live_grep_args")
     require("telescope").load_extension("noice")
+
+    vim.api.nvim_create_user_command(
+      'TelescopeThemes',
+      function()
+          require("telescope").extensions.themes.themes{}
+      end,
+      {}
+    )
   end,
 }

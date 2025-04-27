@@ -13,11 +13,11 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "[b", ":bprevious<cr>")
 vim.keymap.set("n", "]b", ":bnext<cr>")
 vim.keymap.set("n", "<leader>bd", ":bdelete!<cr>" )
+vim.keymap.set("n", "<leader>bo", ":%bdelete|edit#|bdelete#<CR>" )
 
 vim.keymap.set("n", "<C-\\>", ":vsplit<cr>")
 vim.keymap.set("n", "<C-s>", ":w<cr>")
 vim.keymap.set("i", "<C-s>", "<ESC><CMD>w<CR>")
-vim.keymap.set("n", "<C-w>", ":q<cr>")
 
 vim.keymap.set("n", "<C-b>", "ibreakpoint()<escape>")
 vim.keymap.set("i", "<C-b>", "breakpoint()")
