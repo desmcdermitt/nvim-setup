@@ -1,1 +1,1 @@
-vim.cmd("colorscheme onenord-light")
+vim.cmd("colorscheme kanagawa-wave")
