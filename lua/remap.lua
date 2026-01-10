@@ -24,7 +24,7 @@ vim.keymap.set("n", "<C-c>", "<Esc>:cclose<CR>")
 vim.keymap.set("n", "<C-b>", "ibreakpoint()<escape>")
 vim.keymap.set("i", "<C-b>", "breakpoint()")
 
-vim.keymap.set("n", "<leader>bf", ":lua vim.lsp.buf.format()<CR>")
+-- vim.keymap.set("n", "<leader>bf", ":lua vim.lsp.buf.format()<CR>")
 vim.keymap.set("n", "gd", ":lua vim.lsp.buf.definition()<CR>")
 vim.keymap.set("n", "gi", ":lua vim.lsp.buf.implementation()<CR>")
 vim.keymap.set("n", "gr", ":lua vim.lsp.buf.references()<CR>")
