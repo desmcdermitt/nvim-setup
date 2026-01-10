@@ -5,7 +5,6 @@ return {
         "nvim-lua/plenary.nvim",
         "joshmedeski/telescope-smart-goto.nvim",
         "nvim-telescope/telescope-live-grep-args.nvim",
-        'andrew-george/telescope-themes'
     },
     config = function()
         local builtin = require('telescope.builtin')
