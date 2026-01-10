@@ -1,6 +1,6 @@
 return {
     'nvim-treesitter/nvim-treesitter',
-    tag = '0.1x',
+    tag = 'v0.10.0',
     lazy = false,
     run = ':TSUpdate',
     config = function()
