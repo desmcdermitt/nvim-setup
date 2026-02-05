@@ -25,5 +25,5 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGai
 
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('gopls')
-vim.lsp.enable('basedpyright')
-vim.lsp.enable('ols')
+vim.lsp.enable('glsl_analyzer')
+vim.lsp.enable('odin')

@@ -29,4 +29,4 @@ vim.keymap.set("n", "gd", ":lua vim.lsp.buf.definition()<CR>")
 vim.keymap.set("n", "gi", ":lua vim.lsp.buf.implementation()<CR>")
 vim.keymap.set("n", "gr", ":lua vim.lsp.buf.references()<CR>")
 vim.keymap.set("n", "<leader>r", ":lua vim.lsp.buf.rename()<CR>")
-
+vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, { desc = 'LSP signature help' })
