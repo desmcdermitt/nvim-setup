@@ -49,36 +49,21 @@ return {
     {
         'nyoom-engineering/nyoom.nvim',
         lazy = false,
-        priority = 1000,
     },
     {
         'ellisonleao/gruvbox.nvim',
         lazy = false,
-        priority = 1000,
     },
     {
         'kepano/flexoki',
         lazy = false,
-        priority = 1000,
     },
     {
         'rebelot/kanagawa.nvim',
         lazy = false,
-        priority = 1000,
     },
-    -- {
-    --     '',
-    --     lazy = false,
-    --     priority = 1000,
-    -- },
-    -- {
-    --     '',
-    --     lazy = false,
-    --     priority = 1000,
-    -- },
-    -- {
-    --     '',
-    --     lazy = false,
-    --     priority = 1000,
-    -- },
+    {
+        'uhs-robert/oasis.nvim',
+        lazy = false,
+    },
 }
