@@ -1,10 +1,13 @@
 ---@brief
 ---
 --- https://github.com/luals/lua-language-server
+
 ---
 --- Lua language server.
 ---
+
 --- `lua-language-server` can be installed by following the instructions [here](https://luals.github.io/#neovim-install).
+
 ---
 --- The default `cmd` assumes that the `lua-language-server` binary can be found in `$PATH`.
 ---
@@ -34,6 +37,7 @@
 ---         -- (see `:h lua-module-load`)
 ---         path = {
 ---           'lua/?.lua',
+
 ---           'lua/?/init.lua',
 ---         },
 ---       },
@@ -41,25 +45,24 @@
 ---       workspace = {
 ---         checkThirdParty = false,
 ---         library = {
----           vim.env.VIMRUNTIME
+---           vim.env.VIMRUNTIME,
 ---           -- Depending on the usage, you might want to add additional paths
 ---           -- here.
----           -- '${3rd}/luv/library'
----           -- '${3rd}/busted/library'
----         }
+---           -- '${3rd}/luv/library',
+---           -- '${3rd}/busted/library',
+
+---         },
 ---         -- Or pull in all of 'runtimepath'.
 ---         -- NOTE: this is a lot slower and will cause issues when working on
 ---         -- your own configuration.
 ---         -- See https://github.com/neovim/nvim-lspconfig/issues/3189
----         -- library = {
----         --   vim.api.nvim_get_runtime_file('', true),
----         -- }
----       }
+---         -- library = vim.api.nvim_get_runtime_file('', true),
+---       },
 ---     })
 ---   end,
 ---   settings = {
----     Lua = {}
----   }
+---     Lua = {},
+---   },
 --- })
 --- ```
 ---
@@ -68,18 +71,29 @@
 --- * [Lua.workspace.library](https://luals.github.io/wiki/settings/#workspacelibrary)
 ---
 
+local root_markers1 = {
+  '.emmyrc.json',
+  '.luarc.json',
+  '.luarc.jsonc',
+}
+local root_markers2 = {
+  '.luacheckrc',
+  '.stylua.toml',
+  'stylua.toml',
+  'selene.toml',
+  'selene.yml',
+}
+
 ---@type vim.lsp.Config
 return {
   cmd = { 'lua-language-server' },
   filetypes = { 'lua' },
-  root_markers = {
-    '.luarc.json',
-    '.luarc.jsonc',
-    '.luacheckrc',
-    '.stylua.toml',
-    'stylua.toml',
-    'selene.toml',
-    'selene.yml',
-    '.git',
+  root_markers = vim.fn.has('nvim-0.11.3') == 1 and { root_markers1, root_markers2, { '.git' } }
+    or vim.list_extend(vim.list_extend(root_markers1, root_markers2), { '.git' }),
+  settings = {
+    Lua = {
+      codeLens = { enable = true },
+      hint = { enable = true, semicolon = 'Disable' },
+    },
   },
 }
