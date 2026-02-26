@@ -1,1 +1,1 @@
-vim.cmd("colorscheme oasis-mirage")
+vim.cmd("colorscheme delek")
