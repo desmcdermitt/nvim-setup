@@ -6,6 +6,7 @@ return {
             formatters_by_ft = {
                 lua = { "stylua" },
                 python = { "autoflake", "autopep8", "black" },
+                odin = { "ols", },
             },
         })
         local conform = require("conform")
